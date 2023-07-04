@@ -1,3 +1,4 @@
+// external function to modify array - not needed?
 function swap (array, i, j) {
     let temp = array[i];
     array[i] = array[j];
@@ -13,7 +14,10 @@ function partition (array, left, right) {
         while (array[right] > pivot) {
             right--;
         }
-        swap(array, left, right);
+        // swap(array, left, right); // thought I needed an external swap to adjust the array. Guess not?
+        let temp = array[left];
+        array[left] = array[right];
+        array[right] = temp;
     }
     return left
 }
